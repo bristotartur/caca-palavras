@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+:root {
+    --tile-width: 2.5rem;
+    --tile-height: 2.5rem;
+
+    --line-discount: 1.32;
+    --diagonal-line-discount: 1.37;
+
+    --color-1: #FD88FB;
+    --color-2: #FCF088;
+    --color-3: #FF6C63;
+    --color-4: #56FCB1;
+    --color-5: #FCBB68;
+    --color-6: #689EFC;
+    --color-7: #FD88FB;;
+    --color-8: #FCF088;
+    --color-9: #FF6C63;
+    --color-10: #56FCB1;
+    --color-11: #FCBB68;
+    --color-12: #689EFC;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 15px;
+}
+
+.words-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(var(--tile-width) * 12.3);
+    height: 100px;
+
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+
+    background-color: #F5F6F7;
+}
+
+.row-1, .row-2, .row-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 32px;
+
+    padding: 0px 15px;
+
+    font-size: 1.2rem;
+}
+
+.word-found {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--tile-width);
+    height: var(--tile-height);
+
+    font-size: 1.67rem;
+
+    position: relative;
+    cursor: grab;
+}
+
+.tile:active { cursor: crosshair }
+
+.tile > span {
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+
+    position: absolute;
+    z-index: 14;
+}
+
+.belongs-to-word { background-color: gainsboro }
+
+.draw-line, .correct-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    opacity: .7;
+    
+    position: absolute;
+}
+
+.draw-line {
+    width: calc(var(--tile-width) / 5 * 3.5);
+    height: calc(var(--tile-height) / 5 * 3.5);
+    
+    background-color: #8BFFFF;
+    transition: background-color .5s;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+}

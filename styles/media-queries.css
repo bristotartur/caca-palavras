@@ -1,0 +1,73 @@
+@media screen and (min-width: 990px) {
+
+    :root {
+        --tile-width: 2.89rem;
+        --tile-height: 2.89rem;
+
+        --line-discount: 1.45;
+        --diagonal-line-discount: 1.7;
+    }
+
+    .words-container { 
+        gap: 5px;
+
+        width: calc(var(--tile-width) * 12.48);
+        height: 120px;
+
+        padding: 10px; 
+    }
+
+    .board { padding: 10px; }
+
+    .row-1, .row-2, .row-3 { font-size: 1.5rem }
+
+    .tile { font-size: 1.98rem }
+
+}
+
+@media screen and (max-width: 688px) {
+
+    :root {
+        --tile-width: 2.3rem;
+        --tile-height: 2.3rem;
+    }
+
+    .row-1, .row-2, .row-3 { font-size: 1.1rem }
+
+    .tile { font-size: 1.6rem }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    :root {
+        --tile-width: 2rem;
+        --tile-height: 2rem;
+
+        --line-discount: 1.5;
+        --diagonal-line-discount: 1.3;
+    }
+
+    .row-1, .row-2, .row-3 { font-size: 1rem }
+
+    .tile { font-size: 1.4rem }
+    
+}
+
+@media screen and (max-width: 400px) {
+
+    :root {
+        --tile-width: 1.7rem;
+        --tile-height: 1.7rem;
+
+        --line-discount: 1.75;
+        --diagonal-line-discount: .9;
+    }
+
+    .words-container { width: calc(var(--tile-width) * 12.48) }
+
+    .row-1, .row-2, .row-3 { font-size: .9rem }
+
+    .tile { font-size: 1.1rem }
+    
+}
