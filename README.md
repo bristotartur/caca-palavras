@@ -22,16 +22,16 @@ Este projeto é um jogo de caça-palavras desenvolvido utilizando HTML, CSS e Ja
 caca-palavras/
 ├── assets/
 │   └── imagem-exemplo.png
-|
+│
 ├── scripts/
 │   ├── game-interactions.js
 │   ├── game-steup.js
 │   └── words.js
-|
+│
 ├── styles/
-|   ├── index.css
-|   └── media-queries.css
-|
+│   ├── index.css
+│   └── media-queries.css
+│
 ├── index.html
 ├── README.md
 ```
@@ -70,7 +70,7 @@ http-server -p 8000
 
 Com o servidor rodando, você pode abrir o seu navegador e acessar o projeto em `http://localhost:8000`.
 
-Uma outra maneira, e ainda mais simples, de rodar o projeto é através do próprio `VS Code`. Basta ter a extensão `Live Server` instalada e utilizar o comando [Alt + L, Alt + O] no arquivo `index.html` para iniciar o servidor e abrir a página diretamente em seu navegador padrão.
+Uma outra maneira, e ainda mais simples, de rodar o projeto é através do próprio `VS Code`. Basta ter a extensão `Live Server` instalada e utilizar o comando `[Alt + L, Alt + O]` no arquivo `index.html` para iniciar o servidor e abrir a página diretamente em seu navegador padrão.
 
 ## Como Contribuir
 
@@ -89,3 +89,7 @@ Uma outra maneira, e ainda mais simples, de rodar o projeto é através do próp
 ## Créditos
 
 Este jogo foi desenvolvido por [*Artur da Rosa Bristot*](https://github.com/bristotartur). Sinta-se à vontade para entrar em contato caso tenha alguma dúvida ou sugestão.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
