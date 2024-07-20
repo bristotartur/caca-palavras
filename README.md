@@ -2,16 +2,6 @@
 
 Este projeto é um jogo de caça-palavras desenvolvido utilizando HTML, CSS e JavaScript. O objetivo do jogo é encontrar todas as palavras escondidas na grade de letras. O jogo contém mais de 200 palavras que são sorteadas aleatoriamente toda vez que a página é carregada.
 
-## Características
-
-- Interface amigável com design responsivo.
-
-- Lista de palavras a serem encontradas.
-
-- Mecânica de traçamento de linhas.
-
-- Destaque das palavras encontradas.
-
 ## Demonstração
 
 ![Exemplo do jogo](./assets/imagem-exemplo.png)
@@ -56,7 +46,7 @@ Abra o terminal de sua preferência e clone o repositório:
 git clone https://github.com/bristotartur/caca-palavras.git
 ```
 
-Existem diversas formas de rodar o projeto, sendo uma das mais simples utilizando `http-server`. Para utlizalo, instale-o globalmente (se ainda não tiver):
+Existem diversas formas de rodar o projeto, sendo uma das mais simples utilizando `http-server`. Para utlizá-lo, instale-o globalmente (se ainda não tiver):
 
 ```bash
 npm install -g http-server
@@ -85,10 +75,6 @@ Uma outra maneira, e ainda mais simples, de rodar o projeto é através do próp
 5. Faça o push para a branch (`git push origin feature/nova-funcionalidade`).
 
 6. Abra um Pull Request.
-
-## Créditos
-
-Este jogo foi desenvolvido por [*Artur da Rosa Bristot*](https://github.com/bristotartur). Sinta-se à vontade para entrar em contato caso tenha alguma dúvida ou sugestão.
 
 ## Licença
 
