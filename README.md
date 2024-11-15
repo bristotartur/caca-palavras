@@ -2,6 +2,8 @@
 
 Este projeto é um jogo de caça-palavras desenvolvido utilizando HTML, CSS e JavaScript. O objetivo do jogo é encontrar todas as palavras escondidas na grade de letras. O jogo contém mais de 200 palavras que são sorteadas aleatoriamente toda vez que a página é carregada.
 
+Caso queira jogar, [cliqe aqui](https://bristotartur.github.io/caca-palavras/) ou acesse `https://bristotartur.github.io/caca-palavras/`.
+
 ## Demonstração
 
 ![Exemplo do jogo](./assets/imagem-exemplo.png)

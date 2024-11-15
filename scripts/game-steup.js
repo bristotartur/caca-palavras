@@ -82,6 +82,8 @@ function addWords(tiles) {
         let range = orientations.length;
         let word = dictionary.getRandomWord().toUpperCase();
 
+        if (words.includes(word)) continue;
+        
         let orientation = orientations[Math.floor(Math.random() * range)];
 
         switch (orientation) {

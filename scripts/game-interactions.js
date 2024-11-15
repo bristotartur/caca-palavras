@@ -16,10 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const tiles = [...document.querySelectorAll('.tile')];
 
     html.addEventListener('mouseup', handleMouseup);
+    html.addEventListener('touched', handleMouseup);
 
     tiles.forEach((tile) => {
+        // Eventos de mouse
         tile.addEventListener('mousedown', handleMousedown);
         tile.addEventListener('mousemove', handleMousemove);
+        // Eventos de toque
+        tile.addEventListener('touchstart', handleMousedown);
+        tile.addEventListener('touchmove', handleMousemove);
     });
     window.tiles = tiles
 });
@@ -33,8 +38,8 @@ function handleMousedown(event) {
     addLine(tile);
     currentMiddleTile = tile;
 
-    let tileCoords = tile.id.split('-').map(Number);
-    lineRoot = { row: tileCoords[0], column: tileCoords[1] };
+    const [row, column] = tile.id.split('-').map(Number);
+    lineRoot = { row: row, column: column };
 }
 
 function handleMouseup() {
