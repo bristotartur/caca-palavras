@@ -1,6 +1,7 @@
 import { getWords, getWordRowsMap } from './game-steup.js';
 
 const html = document.querySelector('html');
+const board = document.querySelector('.board')
 const words = getWords();
 
 let isMouseDown = false;
@@ -15,34 +16,36 @@ let correctLines = new Set();
 document.addEventListener('DOMContentLoaded', () => {
     const tiles = [...document.querySelectorAll('.tile')];
 
-    html.addEventListener('mouseup', handleMouseup);
-    html.addEventListener('touched', handleMouseup);
-
+    html.addEventListener('mouseup', handlePointerUp);
+    html.addEventListener('touchend', handlePointerUp);
+    
     tiles.forEach((tile) => {
         // Eventos de mouse
-        tile.addEventListener('mousedown', handleMousedown);
-        tile.addEventListener('mousemove', handleMousemove);
+        tile.addEventListener('mousedown', handlePointerDown);
+        tile.addEventListener('mousemove', handlePointerMove);
         // Eventos de toque
-        tile.addEventListener('touchstart', handleMousedown);
-        tile.addEventListener('touchmove', handleMousemove);
+        tile.addEventListener('touchstart', handlePointerDown);
+        tile.addEventListener('touchmove', handlePointerMove);
     });
     window.tiles = tiles
 });
 
-function handleMousedown(event) {
+function handlePointerDown(event) {
     event.preventDefault();
 
-    const tile = event.currentTarget;
-    isMouseDown = true;
+    const tile = event.currentTarget || event.target.closest('.tile');
+    const [row, column] = tile.id.split('-').map(Number);
 
     addLine(tile);
+    
+    isMouseDown = true;
     currentMiddleTile = tile;
-
-    const [row, column] = tile.id.split('-').map(Number);
     lineRoot = { row: row, column: column };
+    
+    board.classList.add('drawing');
 }
 
-function handleMouseup() {
+function handlePointerUp() {
     isMouseDown = false;
 
     if (currentMiddleTile) {
@@ -64,14 +67,25 @@ function handleMouseup() {
         currentMiddleTile = null;
         currentLetters = [];
     }
+    board.classList.remove('drawing');
 }
 
-function handleMousemove(event) {
+function handlePointerMove(event) {
     if (!isMouseDown) return;
 
-    const tile = event.currentTarget;
+    const tile = getTileFromEvent(event);
 
-    if (tile !== currentMiddleTile) drawLine(tile);
+    if (tile && tile !== currentMiddleTile) drawLine(tile);
+}
+
+function getTileFromEvent(event) {
+    event.preventDefault();
+
+    if (event.type === 'touchmove') {
+        const touch = event.touches[0];
+        return document.elementFromPoint(touch.clientX, touch.clientY);
+    }
+    return event.currentTarget;
 }
 
 function checkWord() {
@@ -208,11 +222,11 @@ function calcLinePosition(lineIds, orientation) {
 
 function addLine(tile) {
     const line = document.createElement('div');
+
     line.classList.add('draw-line');
     line.id = 'current'; 
 
     tile.appendChild(line);
-
     return line;
 }
 

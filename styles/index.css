@@ -83,6 +83,10 @@
     padding: 5px;
 }
 
+.board:hover { cursor: grab; }
+
+.board.drawing:hover { cursor: crosshair; }
+
 .tile {
     display: flex;
     flex-direction: column;
@@ -95,10 +99,7 @@
     font-size: 1.67rem;
 
     position: relative;
-    cursor: grab;
 }
-
-.tile:active { cursor: crosshair }
 
 .tile > span {
     user-select: none;
